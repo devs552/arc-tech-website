@@ -352,55 +352,7 @@ export default function Sidebar() {
           flexShrink: 0,
         }}
       >
-        <button
-          type="button"
-          onClick={() => signOut({ redirect: true, redirectTo: '/' })}
-          onMouseEnter={() => setSignOutHover(true)}
-          onMouseLeave={() => setSignOutHover(false)}
-          title={isCollapsed ? 'Sign Out' : undefined}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: isCollapsed ? 'center' : 'flex-start',
-            gap: 10,
-            width: '100%',
-            padding: isCollapsed ? '9px 0' : '9px 12px',
-            borderRadius: 9,
-            border: '1px solid transparent',
-            background: signOutHover ? T.signOutHover : 'transparent',
-            color: T.signOutText,
-            fontSize: 13,
-            fontWeight: 500,
-            cursor: 'pointer',
-            transition: 'background 0.15s',
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Sign-out arrow icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            style={{ width: 18, height: 18, flexShrink: 0 }}
-            aria-hidden
-          >
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-          </svg>
-
-          {!isCollapsed && (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.1 }}
-            >
-              Sign Out
-            </motion.span>
-          )}
-        </button>
+        
       </div>
     </motion.aside>
   );
