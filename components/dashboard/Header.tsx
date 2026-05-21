@@ -265,7 +265,10 @@ function DropdownMenu({ name, email, role, onClose }: DropdownProps) {
       <div style={{ borderTop: `1px solid ${T.dropDivider}`, padding: '6px 6px' }}>
         <button
           type="button"
-          onClick={() => signOut({ redirectTo: '/dashboard' })}
+         onClick={async () => {
+  await signOut({ redirect: false });
+  (window.location.href = '/dashboard');
+}}
           onMouseEnter={() => setHovered('signout')}
           onMouseLeave={() => setHovered(null)}
           style={{
